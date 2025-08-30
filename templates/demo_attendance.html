@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS Demo - Attendance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Demo Warning Banner -->
+    <div class="bg-orange-500 text-white p-3 text-center">
+        <strong>🚨 DEMO VERSION</strong> - Sample attendance data only. 
+        <a href="mailto:shaheerahmad9023@gmail.com" class="underline">Get Real-time Attendance Tracking</a>
+    </div>
+
+    <div class="container mx-auto p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">
+                    <i class="fas fa-clock text-green-600 mr-3"></i>Attendance Management
+                </h1>
+                <p class="text-gray-600 mt-2">Demo version - Sample data for August 31, 2025</p>
+            </div>
+            
+            <button onclick="showProductionAlert()" 
+                    class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                <i class="fas fa-plus mr-2"></i>Mark Attendance (Demo)
+            </button>
+        </div>
+
+        <!-- Attendance Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-2xl text-green-500"></i>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900">3</h3>
+                        <p class="text-gray-600">Present</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-circle text-2xl text-yellow-500"></i>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900">2</h3>
+                        <p class="text-gray-600">Late</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                <div class="flex items-center">
+                    <i class="fas fa-times-circle text-2xl text-red-500"></i>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900">0</h3>
+                        <p class="text-gray-600">Absent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                <div class="flex items-center">
+                    <i class="fas fa-percentage text-2xl text-blue-500"></i>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900">85%</h3>
+                        <p class="text-gray-600">Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attendance Table -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 border-b">
+                <h3 class="text-lg font-semibold text-gray-900">Daily Attendance - January 15, 2024</h3>
+                <p class="text-gray-600 text-sm">Demo data - Production version includes real-time tracking</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Employee</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Check In</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Check Out</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Hours</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">JD</div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Shaheer Ahmad</div>
+                                        <div class="text-sm text-gray-500">Manager</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">09:00 AM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">06:00 PM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">8.0 hrs</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Present</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button onclick="showProductionAlert()" class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                <button onclick="showProductionAlert()" class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">JS</div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Jane Smith</div>
+                                        <div class="text-sm text-gray-500">Developer</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">09:15 AM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">05:45 PM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">7.5 hrs</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Late</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button onclick="showProductionAlert()" class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                <button onclick="showProductionAlert()" class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">MJ</div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Mike Johnson</div>
+                                        <div class="text-sm text-gray-500">Designer</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">08:45 AM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">06:15 PM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">8.5 hrs</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Present</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button onclick="showProductionAlert()" class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                <button onclick="showProductionAlert()" class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold">SW</div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">Sarah Wilson</div>
+                                        <div class="text-sm text-gray-500">HR Specialist</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">09:30 AM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">05:30 PM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">7.0 hrs</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800">Late</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button onclick="showProductionAlert()" class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                <button onclick="showProductionAlert()" class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold">DB</div>
+                                    <div class="ml-4">
+                                        <div class="text-sm font-medium text-gray-900">David Brown</div>
+                                        <div class="text-sm text-gray-500">Analyst</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">08:50 AM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">06:00 PM</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">8.2 hrs</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Present</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                <button onclick="showProductionAlert()" class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                                <button onclick="showProductionAlert()" class="text-red-600 hover:text-red-900">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Production Version CTA -->
+        <div class="mt-8 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-2xl p-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready for Real-time Attendance Tracking?</h2>
+            <p class="text-xl mb-6 opacity-90">Production version includes live tracking, overtime calculations, shift management, and more!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-left">
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                    <h4 class="font-bold text-lg mb-2">✅ Real-time Tracking</h4>
+                    <ul class="text-sm space-y-1 opacity-90">
+                        <li>• Live check-in/check-out</li>
+                        <li>• GPS location tracking</li>
+                        <li>• Mobile app support</li>
+                        <li>• Biometric integration</li>
+                    </ul>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                    <h4 class="font-bold text-lg mb-2">✅ Advanced Calculations</h4>
+                    <ul class="text-sm space-y-1 opacity-90">
+                        <li>• Overtime calculations</li>
+                        <li>• Break time tracking</li>
+                        <li>• Shift management</li>
+                        <li>• Holiday handling</li>
+                    </ul>
+                </div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                    <h4 class="font-bold text-lg mb-2">✅ Reports & Analytics</h4>
+                    <ul class="text-sm space-y-1 opacity-90">
+                        <li>• Monthly reports</li>
+                        <li>• Attendance trends</li>
+                        <li>• Export to Excel/PDF</li>
+                        <li>• Custom date ranges</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:shaheerahmad9023@gmail.com?subject=HRMS Attendance System - Production Version" 
+                   class="bg-white text-green-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                    💰 Get Production Version ($999+)
+                </a>
+                <a href="https://github.com/shaheer9023/Employee_Management_System_" 
+                   class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-green-600 transition-colors">
+                    📖 View Documentation
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showProductionAlert() {
+            alert('🚨 DEMO LIMITATION\n\n' +
+                  'This is demonstration data only.\n\n' +
+                  'Production version includes:\n' +
+                  '• Real-time attendance tracking\n' +
+                  '• Live check-in/check-out system\n' +
+                  '• Overtime calculations\n' +
+                  '• Mobile app integration\n' +
+                  '• Advanced reporting\n\n' +
+                  'Contact: shaheerahmad9023@gmail.com\n' +
+                  'Starting at $999');
+        }
+
+        // Show demo info on page load
+        setTimeout(() => {
+            if (!sessionStorage.getItem('attendance_demo_shown')) {
+                alert('📅 ATTENDANCE MANAGEMENT DEMO\n\n' +
+                      'This page shows sample attendance data.\n\n' +
+                      'Production features include:\n' +
+                      '• Real-time tracking\n' +
+                      '• GPS location verification\n' +
+                      '• Overtime calculations\n' +
+                      '• Shift management\n' +
+                      '• Advanced reporting\n\n' +
+                      'Interested? Contact: shaheerahmad9023@gmail.com');
+                sessionStorage.setItem('attendance_demo_shown', 'true');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

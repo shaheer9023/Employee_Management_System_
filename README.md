@@ -68,7 +68,6 @@
 
 ## 🚦 Quick Start (Demo)
 
-
 ## Requirements
 
 -**Python 3.8+**
@@ -226,9 +225,21 @@ Ready to transform your HR operations?
 - 🚫 No Redistribution: Cannot be resold or redistributed
 - 💡 Learning Purpose: You can learn from the code structure
 - 📧 Questions: Contact me for clarifications
+- 
 
 ---
 
+### Test the Demo
+
+```
+1. Command Prompt me: python demo_main.py
+2. Browser At : http://localhost:8000
+3. Test these URLs:
+   - (Dashboard) http://localhost:8000/ 
+   - (Login Demo) http://localhost:8000/login  
+   - (Employees) http://localhost:8000/employees 
+   - (Attendance) http://localhost:8000/attendance
+```
 
 <p>
     🚀 <strong>Ready to Get Started?</strong><br>
@@ -243,3 +254,5 @@ Ready to transform your HR operations?
     <sub>Built with ❤️ by <strong>Shaheer Ahmad</strong> | Available for custom development projects</sub>
   </p>
 </div>`
+
+`
